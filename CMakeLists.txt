@@ -1,0 +1,21 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
+PROJECT(binaryData)
+
+SET(CMAKE_CXX_STANDARD 11)
+
+SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -g")
+SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
+
+SET(EXECUTABLE_NAME binaryData)
+SET(DIRS_LST BootSector DiskImg Exceptions FileInfo)
+SET(FILES_LST
+    BootSector/BootSector.cpp
+    DiskImg/DiskImg.cpp
+    Exceptions/Exceptions.cpp
+    FileInfo/FileInfo.cpp
+    main.cpp
+)
+
+INCLUDE_DIRECTORIES(${DIRS_LST})
+
+ADD_EXECUTABLE(${EXECUTABLE_NAME} ${FILES_LST})
